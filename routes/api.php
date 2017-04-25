@@ -20,6 +20,13 @@ Route::post('/auth/login', 'AuthController@login');
 Route::group(['middleware' => 'jwt.auth:auth:api'], function () {
     Route::get('/auth/user', 'AuthController@user');
     Route::post('/auth/logout', 'AuthController@logout');
+
+    //now this is protected
+    Route::delete('tasks/{task}', function(Task $task){
+        if($task->delete())
+          return response('', 200);
+        return response('', 400);
+    });
 });
 
 Route::group(['middleware' => 'jwt.refresh:api'], function () {
@@ -43,11 +50,7 @@ Route::post('tasks', function(Request $request){
   return response('Task must have a name.', 400);
 });
 
-Route::delete('tasks/{task}', function(Task $task){
-    if($task->delete())
-      return response('', 200);
-    return response('', 400);
-});
+
 
 Route::put('tasks/{task}', function(Request $request, Task $task){
     if($request->has('name')){

@@ -27,7 +27,7 @@ window.Vue = require('vue');
 
 window.axios = require('axios');
 
-window.axios.defaults.baseURL = '/api';
+window.axios.defaults.baseURL = 'http://jwt-auth-example.dev/api'; /*default naming!*/
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

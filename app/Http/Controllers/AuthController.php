@@ -77,12 +77,13 @@ class AuthController extends Controller
           return response([
               'status' => 'error',
               'error' => 'invalid.credentials',
-              'msg' => 'Invalid Credentials.'
+              'msg' => 'Invalid Credentials.'              
           ], 400);
       }
       return response([
-          'status' => 'success'
-      ])->header('Authorization', $token);
+          'status' => 'success',
+          'id_token' => $token
+      ]);//->header('Authorization', $token);
   }
 
   public function logout()
@@ -103,7 +104,7 @@ class AuthController extends Controller
 
   public function user(Request $request)
   {
-      $user = User::find(Auth::user()->id);
+      $user = User::find(Auth::user()->id); 
       return response([
           'status' => 'success',
           'data' => $user

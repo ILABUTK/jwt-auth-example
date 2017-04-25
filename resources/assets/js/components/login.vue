@@ -36,7 +36,8 @@ export default {
               window.axios.post('/auth/login', crediential)
                 .then( response => {
                   console.log(response);
-                  localStorage.setItem('id_token', response.headers.authorization);
+                  //localStorage.setItem('id_token', response.headers.authorization);
+                  localStorage.setItem('id_token', response.data.id_token); //
                   this.$router.push('/');
                 })
                 .catch( error => {

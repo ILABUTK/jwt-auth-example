@@ -42,7 +42,7 @@ export default {
 
           window.axios.post('/auth/register', crediential)
             .then( response => {
-              console.log(response);
+              console.log("START::" + response);
               localStorage.setItem('id_token', response.headers.authorization);
               this.$router.push('/');
             })
