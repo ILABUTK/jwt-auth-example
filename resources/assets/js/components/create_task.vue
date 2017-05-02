@@ -32,6 +32,7 @@ export default {
           .then( response => {
             console.log(response);
             this.name = '';
+            this.$router.push('/'); //go back
           })
           .catch( error => {
             console.log(error);
