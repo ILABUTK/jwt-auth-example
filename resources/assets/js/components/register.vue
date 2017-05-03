@@ -18,6 +18,14 @@
         </div>
         <button type="submit" class="btn btn-default">Register</button>
     </form>
+    <div>
+      <hr>
+      <ul class="list">
+          <li class="pull-left">
+            <router-link to="/">Home</router-link>
+          </li>
+      </ul>
+    </div>
   </div>
 </template>
 

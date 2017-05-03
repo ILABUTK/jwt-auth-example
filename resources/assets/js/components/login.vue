@@ -12,8 +12,16 @@
             <label for="password">Password</label>
             <input type="password" id="password" class="form-control" v-model="password" required>
         </div>
-        <button type="submit" class="btn btn-default">Sign in</button>
+        <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
+    <div>
+      <hr>
+      <ul class="list">
+          <li class="pull-left">
+            <router-link to="/">Home</router-link>
+          </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
